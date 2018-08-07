@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassMenu" />
+            <s:element minOccurs="0" maxOccurs="1" name="EstadoExistencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClassMenu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="uidmenu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="uidrol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="uidpagina" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="esvisible" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="semuestra" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectResult" type="tns:ArrayOfClassMenu" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassMenu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassMenu" nillable="true" type="tns:ClassMenu" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectDynamic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassMenu" />
+            <s:element minOccurs="0" maxOccurs="1" name="EstadoExistencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDynamicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectDynamicResult" type="tns:ArrayOfClassMenu" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDataTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassMenu" />
+            <s:element minOccurs="0" maxOccurs="1" name="EstadoExistencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDataTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectDataTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectFirst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uidmenu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EstadoExistencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectFirstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectFirstResult" type="tns:ClassMenu" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertInto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassMenu" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertIntoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassMenu" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassMenu" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Select" />
+  </wsdl:message>
+  <wsdl:message name="SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectDynamicSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectDynamic" />
+  </wsdl:message>
+  <wsdl:message name="SelectDynamicSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectDynamicResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectDataTableSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectDataTable" />
+  </wsdl:message>
+  <wsdl:message name="SelectDataTableSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectFirstSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectFirst" />
+  </wsdl:message>
+  <wsdl:message name="SelectFirstSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectFirstResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertIntoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertInto" />
+  </wsdl:message>
+  <wsdl:message name="InsertIntoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertIntoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_MenuSoap">
+    <wsdl:operation name="Select">
+      <wsdl:input message="tns:SelectSoapIn" />
+      <wsdl:output message="tns:SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDynamic">
+      <wsdl:input message="tns:SelectDynamicSoapIn" />
+      <wsdl:output message="tns:SelectDynamicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDataTable">
+      <wsdl:input message="tns:SelectDataTableSoapIn" />
+      <wsdl:output message="tns:SelectDataTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFirst">
+      <wsdl:input message="tns:SelectFirstSoapIn" />
+      <wsdl:output message="tns:SelectFirstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInto">
+      <wsdl:input message="tns:InsertIntoSoapIn" />
+      <wsdl:output message="tns:InsertIntoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_MenuSoap" type="tns:WS_MenuSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Select">
+      <soap:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDynamic">
+      <soap:operation soapAction="http://tempuri.org/SelectDynamic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDataTable">
+      <soap:operation soapAction="http://tempuri.org/SelectDataTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFirst">
+      <soap:operation soapAction="http://tempuri.org/SelectFirst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInto">
+      <soap:operation soapAction="http://tempuri.org/InsertInto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_MenuSoap12" type="tns:WS_MenuSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Select">
+      <soap12:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDynamic">
+      <soap12:operation soapAction="http://tempuri.org/SelectDynamic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDataTable">
+      <soap12:operation soapAction="http://tempuri.org/SelectDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFirst">
+      <soap12:operation soapAction="http://tempuri.org/SelectFirst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInto">
+      <soap12:operation soapAction="http://tempuri.org/InsertInto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_Menu">
+    <wsdl:port name="WS_MenuSoap" binding="tns:WS_MenuSoap">
+      <soap:address location="http://localhost:51121/MVC/Vista/WS_Menu.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_MenuSoap12" binding="tns:WS_MenuSoap12">
+      <soap12:address location="http://localhost:51121/MVC/Vista/WS_Menu.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

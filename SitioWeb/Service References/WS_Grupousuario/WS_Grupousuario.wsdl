@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassGrupousuario" />
+            <s:element minOccurs="0" maxOccurs="1" name="EstadoExistencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClassGrupousuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="uidgrupousuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="uidgrupo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="uidusuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux10" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectResult" type="tns:ArrayOfClassGrupousuario" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassGrupousuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassGrupousuario" nillable="true" type="tns:ClassGrupousuario" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectFirst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uidgrupousuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EstadoExistencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectFirstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectFirstResult" type="tns:ClassGrupousuario" />
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertInto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassGrupousuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertIntoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassGrupousuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ClassGrupousuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Select" />
+  </wsdl:message>
+  <wsdl:message name="SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectFirstSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectFirst" />
+  </wsdl:message>
+  <wsdl:message name="SelectFirstSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectFirstResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertIntoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertInto" />
+  </wsdl:message>
+  <wsdl:message name="InsertIntoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertIntoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_GrupousuarioSoap">
+    <wsdl:operation name="Select">
+      <wsdl:input message="tns:SelectSoapIn" />
+      <wsdl:output message="tns:SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFirst">
+      <wsdl:input message="tns:SelectFirstSoapIn" />
+      <wsdl:output message="tns:SelectFirstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInto">
+      <wsdl:input message="tns:InsertIntoSoapIn" />
+      <wsdl:output message="tns:InsertIntoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_GrupousuarioSoap" type="tns:WS_GrupousuarioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Select">
+      <soap:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFirst">
+      <soap:operation soapAction="http://tempuri.org/SelectFirst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInto">
+      <soap:operation soapAction="http://tempuri.org/InsertInto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_GrupousuarioSoap12" type="tns:WS_GrupousuarioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Select">
+      <soap12:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFirst">
+      <soap12:operation soapAction="http://tempuri.org/SelectFirst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInto">
+      <soap12:operation soapAction="http://tempuri.org/InsertInto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_Grupousuario">
+    <wsdl:port name="WS_GrupousuarioSoap" binding="tns:WS_GrupousuarioSoap">
+      <soap:address location="http://localhost:51121/MVC/Vista/WS_Grupousuario.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_GrupousuarioSoap12" binding="tns:WS_GrupousuarioSoap12">
+      <soap12:address location="http://localhost:51121/MVC/Vista/WS_Grupousuario.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

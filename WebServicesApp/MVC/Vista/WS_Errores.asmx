@@ -1,0 +1,1 @@
+<%@ WebService Language="C#" CodeBehind="WS_Errores.asmx.cs" Class="WebServicesApp.MVC.Vista.WS_Errores" %>

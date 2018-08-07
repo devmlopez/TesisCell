@@ -1,0 +1,1 @@
+<%@ WebService Language="C#" CodeBehind="WS_Menu.asmx.cs" Class="WebServicesApp.MVC.Vista.WS_Menu" %>

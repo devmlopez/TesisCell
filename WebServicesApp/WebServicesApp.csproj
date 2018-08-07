@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D63733FD-52E5-454D-BE70-BE111BE93A27}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebServicesApp</RootNamespace>
+    <AssemblyName>WebServicesApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MVC\Vista\WS_Menu.asmx" />
+    <Content Include="MVC\Vista\WS_Procesotipocomentario.asmx" />
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="MVC\Vista\WS_Categoriaproducto.asmx" />
+    <Content Include="MVC\Vista\WS_Cliente.asmx" />
+    <Content Include="MVC\Vista\WS_Empleado.asmx" />
+    <Content Include="MVC\Vista\WS_Empresa.asmx" />
+    <Content Include="MVC\Vista\WS_Equipo.asmx" />
+    <Content Include="MVC\Vista\WS_Equipoasesor.asmx" />
+    <Content Include="MVC\Vista\WS_Equipoherramienta.asmx" />
+    <Content Include="MVC\Vista\WS_Errores.asmx" />
+    <Content Include="MVC\Vista\WS_Estadocivil.asmx" />
+    <Content Include="MVC\Vista\WS_Estadoprocesos.asmx" />
+    <Content Include="MVC\Vista\WS_Facturacompra.asmx" />
+    <Content Include="MVC\Vista\WS_Facturacompradetalle.asmx" />
+    <Content Include="MVC\Vista\WS_Facturareventareferencia.asmx" />
+    <Content Include="MVC\Vista\WS_Facturaventa.asmx" />
+    <Content Include="MVC\Vista\WS_Facturaventadetalle.asmx" />
+    <Content Include="MVC\Vista\WS_Grupo.asmx" />
+    <Content Include="MVC\Vista\WS_Grupousuario.asmx" />
+    <Content Include="MVC\Vista\WS_Informetecnico.asmx" />
+    <Content Include="MVC\Vista\WS_Loginuser.asmx" />
+    <Content Include="MVC\Vista\WS_Media.asmx" />
+    <Content Include="MVC\Vista\WS_Nivelestudio.asmx" />
+    <Content Include="MVC\Vista\WS_Ot.asmx" />
+    <Content Include="MVC\Vista\WS_Pagina.asmx" />
+    <Content Include="MVC\Vista\WS_Paginagrupo.asmx" />
+    <Content Include="MVC\Vista\WS_Parametros.asmx" />
+    <Content Include="MVC\Vista\WS_Proceso.asmx" />
+    <Content Include="MVC\Vista\WS_Producto.asmx" />
+    <Content Include="MVC\Vista\WS_Programacionmantenimiento.asmx" />
+    <Content Include="MVC\Vista\WS_Proveedor.asmx" />
+    <Content Include="MVC\Vista\WS_Rol.asmx" />
+    <Content Include="MVC\Vista\WS_Serviciotecnico.asmx" />
+    <Content Include="MVC\Vista\WS_Sexo.asmx" />
+    <Content Include="MVC\Vista\WS_Talonario.asmx" />
+    <Content Include="MVC\Vista\WS_Tipocomentario.asmx" />
+    <Content Include="MVC\Vista\WS_Tipoiconoimg.asmx" />
+    <Content Include="MVC\Vista\WS_Tipoidentificacion.asmx" />
+    <Content Include="MVC\Vista\WS_Tipopersona.asmx" />
+    <Content Include="MVC\Vista\WS_Tiposerviciotecnico.asmx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Controlador\ClassCategoriaproducto.cs" />
+    <Compile Include="MVC\Controlador\ClassCliente.cs" />
+    <Compile Include="MVC\Controlador\ClassEmpleado.cs" />
+    <Compile Include="MVC\Controlador\ClassEmpresa.cs" />
+    <Compile Include="MVC\Controlador\ClassEquipo.cs" />
+    <Compile Include="MVC\Controlador\ClassEquipoasesor.cs" />
+    <Compile Include="MVC\Controlador\ClassEquipoherramienta.cs" />
+    <Compile Include="MVC\Controlador\ClassErrores.cs" />
+    <Compile Include="MVC\Controlador\ClassEstadocivil.cs" />
+    <Compile Include="MVC\Controlador\ClassEstadoprocesos.cs" />
+    <Compile Include="MVC\Controlador\ClassFacturacompra.cs" />
+    <Compile Include="MVC\Controlador\ClassFacturacompradetalle.cs" />
+    <Compile Include="MVC\Controlador\ClassFacturareventareferencia.cs" />
+    <Compile Include="MVC\Controlador\ClassFacturaventa.cs" />
+    <Compile Include="MVC\Controlador\ClassFacturaventadetalle.cs" />
+    <Compile Include="MVC\Controlador\ClassGrupo.cs" />
+    <Compile Include="MVC\Controlador\ClassGrupousuario.cs" />
+    <Compile Include="MVC\Controlador\ClassInformetecnico.cs" />
+    <Compile Include="MVC\Controlador\ClassLoginuser.cs" />
+    <Compile Include="MVC\Controlador\ClassMedia.cs" />
+    <Compile Include="MVC\Controlador\ClassMenu.cs" />
+    <Compile Include="MVC\Controlador\ClassNivelestudio.cs" />
+    <Compile Include="MVC\Controlador\ClassOt.cs" />
+    <Compile Include="MVC\Controlador\ClassPagina.cs" />
+    <Compile Include="MVC\Controlador\ClassPaginagrupo.cs" />
+    <Compile Include="MVC\Controlador\ClassParametros.cs" />
+    <Compile Include="MVC\Controlador\ClassProceso.cs" />
+    <Compile Include="MVC\Controlador\ClassProcesotipocomentario.cs" />
+    <Compile Include="MVC\Controlador\ClassProducto.cs" />
+    <Compile Include="MVC\Controlador\ClassProgramacionmantenimiento.cs" />
+    <Compile Include="MVC\Controlador\ClassProveedor.cs" />
+    <Compile Include="MVC\Controlador\ClassRol.cs" />
+    <Compile Include="MVC\Controlador\ClassServiciotecnico.cs" />
+    <Compile Include="MVC\Controlador\ClassSexo.cs" />
+    <Compile Include="MVC\Controlador\ClassTalonario.cs" />
+    <Compile Include="MVC\Controlador\ClassTipocomentario.cs" />
+    <Compile Include="MVC\Controlador\ClassTipoiconoimg.cs" />
+    <Compile Include="MVC\Controlador\ClassTipoidentificacion.cs" />
+    <Compile Include="MVC\Controlador\ClassTipopersona.cs" />
+    <Compile Include="MVC\Controlador\ClassTiposerviciotecnico.cs" />
+    <Compile Include="MVC\Controlador\SqlCategoriaproducto.cs" />
+    <Compile Include="MVC\Controlador\SqlCliente.cs" />
+    <Compile Include="MVC\Controlador\SqlEmpleado.cs" />
+    <Compile Include="MVC\Controlador\SqlEmpresa.cs" />
+    <Compile Include="MVC\Controlador\SqlEquipo.cs" />
+    <Compile Include="MVC\Controlador\SqlEquipoasesor.cs" />
+    <Compile Include="MVC\Controlador\SqlEquipoherramienta.cs" />
+    <Compile Include="MVC\Controlador\SqlErrores.cs" />
+    <Compile Include="MVC\Controlador\SqlEstadocivil.cs" />
+    <Compile Include="MVC\Controlador\SqlEstadoprocesos.cs" />
+    <Compile Include="MVC\Controlador\SqlFacturacompra.cs" />
+    <Compile Include="MVC\Controlador\SqlFacturacompradetalle.cs" />
+    <Compile Include="MVC\Controlador\SqlFacturareventareferencia.cs" />
+    <Compile Include="MVC\Controlador\SqlFacturaventa.cs" />
+    <Compile Include="MVC\Controlador\SqlFacturaventadetalle.cs" />
+    <Compile Include="MVC\Controlador\SqlGrupo.cs" />
+    <Compile Include="MVC\Controlador\SqlGrupousuario.cs" />
+    <Compile Include="MVC\Controlador\SqlInformetecnico.cs" />
+    <Compile Include="MVC\Controlador\SqlLoginuser.cs" />
+    <Compile Include="MVC\Controlador\SqlMedia.cs" />
+    <Compile Include="MVC\Controlador\SqlMenu.cs" />
+    <Compile Include="MVC\Controlador\SqlNivelestudio.cs" />
+    <Compile Include="MVC\Controlador\SqlOt.cs" />
+    <Compile Include="MVC\Controlador\SqlPagina.cs" />
+    <Compile Include="MVC\Controlador\SqlPaginagrupo.cs" />
+    <Compile Include="MVC\Controlador\SqlParametros.cs" />
+    <Compile Include="MVC\Controlador\SqlProceso.cs" />
+    <Compile Include="MVC\Controlador\SqlProcesotipocomentario.cs" />
+    <Compile Include="MVC\Controlador\SqlProducto.cs" />
+    <Compile Include="MVC\Controlador\SqlProgramacionmantenimiento.cs" />
+    <Compile Include="MVC\Controlador\SqlProveedor.cs" />
+    <Compile Include="MVC\Controlador\SqlRol.cs" />
+    <Compile Include="MVC\Controlador\SqlServiciotecnico.cs" />
+    <Compile Include="MVC\Controlador\SqlSexo.cs" />
+    <Compile Include="MVC\Controlador\SqlTalonario.cs" />
+    <Compile Include="MVC\Controlador\SqlTipocomentario.cs" />
+    <Compile Include="MVC\Controlador\SqlTipoiconoimg.cs" />
+    <Compile Include="MVC\Controlador\SqlTipoidentificacion.cs" />
+    <Compile Include="MVC\Controlador\SqlTipopersona.cs" />
+    <Compile Include="MVC\Controlador\SqlTiposerviciotecnico.cs" />
+    <Compile Include="MVC\Modelo\ConexionClass.cs" />
+    <Compile Include="MVC\Modelo\ExecProcedure\ParametersProcedure.cs" />
+    <Compile Include="MVC\Modelo\ExecProcedure\SqlProcedureExec.cs" />
+    <Compile Include="MVC\Vista\WS_Categoriaproducto.asmx.cs">
+      <DependentUpon>WS_Categoriaproducto.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Cliente.asmx.cs">
+      <DependentUpon>WS_Cliente.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Empleado.asmx.cs">
+      <DependentUpon>WS_Empleado.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Empresa.asmx.cs">
+      <DependentUpon>WS_Empresa.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Equipo.asmx.cs">
+      <DependentUpon>WS_Equipo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Equipoasesor.asmx.cs">
+      <DependentUpon>WS_Equipoasesor.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Equipoherramienta.asmx.cs">
+      <DependentUpon>WS_Equipoherramienta.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Errores.asmx.cs">
+      <DependentUpon>WS_Errores.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Estadocivil.asmx.cs">
+      <DependentUpon>WS_Estadocivil.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Estadoprocesos.asmx.cs">
+      <DependentUpon>WS_Estadoprocesos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Facturacompra.asmx.cs">
+      <DependentUpon>WS_Facturacompra.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Facturacompradetalle.asmx.cs">
+      <DependentUpon>WS_Facturacompradetalle.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Facturareventareferencia.asmx.cs">
+      <DependentUpon>WS_Facturareventareferencia.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Facturaventa.asmx.cs">
+      <DependentUpon>WS_Facturaventa.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Facturaventadetalle.asmx.cs">
+      <DependentUpon>WS_Facturaventadetalle.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Grupo.asmx.cs">
+      <DependentUpon>WS_Grupo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Grupousuario.asmx.cs">
+      <DependentUpon>WS_Grupousuario.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Informetecnico.asmx.cs">
+      <DependentUpon>WS_Informetecnico.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Loginuser.asmx.cs">
+      <DependentUpon>WS_Loginuser.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Media.asmx.cs">
+      <DependentUpon>WS_Media.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Menu.asmx.cs">
+      <DependentUpon>WS_Menu.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Nivelestudio.asmx.cs">
+      <DependentUpon>WS_Nivelestudio.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Ot.asmx.cs">
+      <DependentUpon>WS_Ot.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Pagina.asmx.cs">
+      <DependentUpon>WS_Pagina.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Paginagrupo.asmx.cs">
+      <DependentUpon>WS_Paginagrupo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Parametros.asmx.cs">
+      <DependentUpon>WS_Parametros.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Proceso.asmx.cs">
+      <DependentUpon>WS_Proceso.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Procesotipocomentario.asmx.cs">
+      <DependentUpon>WS_Procesotipocomentario.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Producto.asmx.cs">
+      <DependentUpon>WS_Producto.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Programacionmantenimiento.asmx.cs">
+      <DependentUpon>WS_Programacionmantenimiento.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Proveedor.asmx.cs">
+      <DependentUpon>WS_Proveedor.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Rol.asmx.cs">
+      <DependentUpon>WS_Rol.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Serviciotecnico.asmx.cs">
+      <DependentUpon>WS_Serviciotecnico.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Sexo.asmx.cs">
+      <DependentUpon>WS_Sexo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Talonario.asmx.cs">
+      <DependentUpon>WS_Talonario.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Tipocomentario.asmx.cs">
+      <DependentUpon>WS_Tipocomentario.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Tipoiconoimg.asmx.cs">
+      <DependentUpon>WS_Tipoiconoimg.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Tipoidentificacion.asmx.cs">
+      <DependentUpon>WS_Tipoidentificacion.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Tipopersona.asmx.cs">
+      <DependentUpon>WS_Tipopersona.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Vista\WS_Tiposerviciotecnico.asmx.cs">
+      <DependentUpon>WS_Tiposerviciotecnico.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51121</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51121/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServicesApp", "WebServicesApp\WebServicesApp.csproj", "{D63733FD-52E5-454D-BE70-BE111BE93A27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitioWeb", "SitioWeb\SitioWeb.csproj", "{2F896B6C-31EF-4831-A7BC-C274B7289051}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D63733FD-52E5-454D-BE70-BE111BE93A27} = {D63733FD-52E5-454D-BE70-BE111BE93A27}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D63733FD-52E5-454D-BE70-BE111BE93A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63733FD-52E5-454D-BE70-BE111BE93A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63733FD-52E5-454D-BE70-BE111BE93A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63733FD-52E5-454D-BE70-BE111BE93A27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F896B6C-31EF-4831-A7BC-C274B7289051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F896B6C-31EF-4831-A7BC-C274B7289051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F896B6C-31EF-4831-A7BC-C274B7289051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F896B6C-31EF-4831-A7BC-C274B7289051}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

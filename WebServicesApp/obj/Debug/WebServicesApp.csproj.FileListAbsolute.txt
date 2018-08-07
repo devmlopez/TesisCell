@@ -1,0 +1,39 @@
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\csc.exe
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\System.Collections.Immutable.dll
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\vbc.exe
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\VBCSCompiler.exe
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\roslyn\VBCSCompiler.exe.config
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\WebServicesApp.dll.config
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\WebServicesApp.dll
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\WebServicesApp.pdb
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\obj\Debug\WebServicesApp.dll
+c:\users\usuario\documents\visual studio 2015\Projects\TesisRepuestosCell\WebServicesApp\obj\Debug\WebServicesApp.pdb
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\csc.exe
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\vbc.exe
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\WebServicesApp.dll.config
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\WebServicesApp.dll
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\WebServicesApp.pdb
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\obj\Debug\WebServicesApp.dll
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\obj\Debug\WebServicesApp.pdb
+C:\Users\SystemHost\Documents\TesisRepuestosCell\WebServicesApp\obj\Debug\WebServicesApp.csprojResolveAssemblyReference.cache
