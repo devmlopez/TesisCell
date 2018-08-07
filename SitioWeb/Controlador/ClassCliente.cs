@@ -7,7 +7,7 @@ namespace SitioWeb.Controlador
 {
     public class ClassCliente
     {        
-		//Comentrario prueba 
+		//Comentrario prueba 2 
 			public string uidcliente {get;set;}
 			public int? id_cliente {get;set;}
 			public string uidtipopersona {get;set;}
