@@ -53,6 +53,14 @@
                                         <b>Fecha Ingreso:</b>
                                         <asp:Label Enabled="false" ID="txt_fechaingreso_select" runat="server" CssClass="" TextMode="Date" max="2100-01-01" min="2000-01-01" Width="100 %"></asp:Label>
                                     </div>
+                                      <div class="col-xs-3 ">
+                                        <b>Fecha Salida:</b>
+                                        <asp:Label Enabled="false" ID="txt_FechaSalida_select" runat="server" CssClass="" TextMode="Date" max="2100-01-01" min="2000-01-01" Width="100 %"></asp:Label>
+                                    </div>
+                                      <div class="col-xs-3 ">
+                                        <b>IMEI:</b>
+                                        <asp:Label Enabled="false" ID="txt_IMEI_select" runat="server" CssClass=""  Width="100 %"></asp:Label>
+                                    </div>
                                     <div class="col-xs-3 ">
                                         <b>Marca:</b>
                                         <asp:Label Enabled="false" ID="txt_marca_select" runat="server" CssClass="" MaxLength="100" Width="100 %"></asp:Label>

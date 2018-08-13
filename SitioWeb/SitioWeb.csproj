@@ -7461,6 +7461,9 @@
     <Content Include="Forms\MenuRol.aspx" />
     <Content Include="Forms\Procesotipocomentario.aspx" />
     <Content Include="Forms\Serviciotecnico.aspx" />
+    <Content Include="img\Logo Rodech.png" />
+    <Content Include="img\logo.jpg" />
+    <Content Include="img\user-default.png" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Forms\Cliente.aspx" />
@@ -7594,6 +7597,7 @@
     <Content Include="Forms\Tipoidentificacion.aspx" />
     <Content Include="Forms\Tipopersona.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Salir.aspx" />
     <Content Include="Script Base\Script BaseCOmpleta.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -9410,6 +9414,13 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salir.aspx.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Salir.aspx.designer.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WS_Cliente\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

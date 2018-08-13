@@ -49,6 +49,24 @@ namespace SitioWeb.Forms {
         protected global::System.Web.UI.WebControls.Label txt_fechaingreso_select;
         
         /// <summary>
+        /// Control txt_FechaSalida_select.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_FechaSalida_select;
+        
+        /// <summary>
+        /// Control txt_IMEI_select.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_IMEI_select;
+        
+        /// <summary>
         /// Control txt_marca_select.
         /// </summary>
         /// <remarks>

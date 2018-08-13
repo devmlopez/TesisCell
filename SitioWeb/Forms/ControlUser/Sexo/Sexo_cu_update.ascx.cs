@@ -29,7 +29,15 @@ namespace SitioWeb.Forms.ControlUser.Sexo
         {
             string resultado = "";
             var objeto = GetClass_Control_Edit();
-            SitioWeb.Controlador.SqlSexo.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            if (Controlador.SqlSexo.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlSexo.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+
             lblMensajeError_update.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))

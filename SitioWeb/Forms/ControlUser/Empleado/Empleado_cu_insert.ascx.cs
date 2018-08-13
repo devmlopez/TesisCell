@@ -54,7 +54,15 @@ namespace SitioWeb.Forms.ControlUser.Empleado
         {
             string resultado = "";
             var objeto = GetClass_Control_New();
-            SitioWeb.Controlador.SqlEmpleado.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            if (Controlador.SqlEmpleado.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlEmpleado.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+
             lblMensajeError_Insert.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))

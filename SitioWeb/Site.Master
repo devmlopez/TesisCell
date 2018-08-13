@@ -1,5 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SitioWeb.Site" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SitioWeb.Site"  %>
 <%@ Register Src="~/Forms/ControlUser/MsgControl.ascx" TagPrefix="uc1" TagName="MsgControl" %>
 <%@ Register Src="~/Forms/ControlUser/UC_Menu.ascx" TagPrefix="uc1" TagName="UC_Menu" %>
 
@@ -326,16 +325,16 @@
                                         <%--<a href="#" class="btn btn-default btn-flat">Profile</a>--%>
                                     </div>
                                     <div class="pull-right">
-                                        <asp:LinkButton runat="server" ID="btnSignOut" OnClick="btnSignOut_Click"
-                                            Text="Sing Out" CssClass="btn btn-default btn-flat">
-
-                                        </asp:LinkButton>
+                                       <%-- <asp:LinkButton runat="server" ID="btnSignOut" OnClick="btnSignOut_Click"
+                                            Text="Salir" CssClass="btn btn-default btn-flat">
+                                        </asp:LinkButton>--%>
+                                        <a href="../Salir.aspx" class="btn btn-default btn-flat"> Salir</a>
                                     </div>
                                 </li>
                             </ul>
                         </li>
                         <!-- Control Sidebar Toggle Button -->
-                        <li>
+                        <li style="display:none">
                             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                         </li>
                     </ul>

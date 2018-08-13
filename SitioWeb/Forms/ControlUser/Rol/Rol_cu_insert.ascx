@@ -2,9 +2,13 @@
 <%@ Register Src="~/Forms/ControlUser/MsgControl.ascx" TagPrefix="uc1" TagName="MsgControl" %>
         
 		
+		  <% if(SitioWeb.ClasesUtiles.SessionClass.GetLoginUser(Page).ClassRol.perisocrear==true){
+          %> 
 		<a href="#" class="btn btn-default btn-xs btn-flat" data-toggle="modal" data-target="#Inser-modal-default">
             <i class="fa fa-file-o"></i>Agregar
         </a>
+
+           <%  } %>
 		<!-- Modal Insert -->
         <div class="modal fade" id="Inser-modal-default">
             <div class="modal-dialog modal-lg">

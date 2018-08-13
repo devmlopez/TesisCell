@@ -30,7 +30,15 @@ namespace SitioWeb.Forms.ControlUser.Proceso
         {
             string resultado = "";
             var objeto = GetClass_Control_Edit();
-            SitioWeb.Controlador.SqlProceso.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            if (Controlador.SqlProceso.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlProceso.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+
             lblMensajeError_update.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))

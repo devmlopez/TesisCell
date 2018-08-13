@@ -38,7 +38,15 @@ namespace SitioWeb.Forms.ControlUser.Grupousuario
         {
             string resultado = "";
             var objeto = GetClass_Control_New();
-            SitioWeb.Controlador.SqlGrupousuario.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            if (Controlador.SqlGrupousuario.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlGrupousuario.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+
             lblMensajeError_Insert.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))

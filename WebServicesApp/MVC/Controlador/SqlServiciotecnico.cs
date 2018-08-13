@@ -21,8 +21,10 @@ namespace MVC.Controlador
 			ParamIn.Add(new ParametersProcedure(nameof(VALUE.codservicio), VALUE.codservicio, Convert.ToInt32(0).GetType().ToString(), OrentationType.In));
 			ParamIn.Add(new ParametersProcedure(nameof(VALUE.uidcliente), VALUE.uidcliente, "".GetType().ToString(), OrentationType.In));
 			ParamIn.Add(new ParametersProcedure(nameof(VALUE.uidempleado), VALUE.uidempleado, "".GetType().ToString(), OrentationType.In));
-			ParamIn.Add(new ParametersProcedure(nameof(VALUE.fechaingreso), VALUE.fechaingreso, "".GetType().ToString(), OrentationType.In));
-			ParamIn.Add(new ParametersProcedure(nameof(VALUE.marca), VALUE.marca, "".GetType().ToString(), OrentationType.In));
+            ParamIn.Add(new ParametersProcedure(nameof(VALUE.fechaingreso), VALUE.fechaingreso, DateTime.Now.GetType().ToString(), OrentationType.In));
+            ParamIn.Add(new ParametersProcedure(nameof(VALUE.fechasalida), VALUE.fechasalida, DateTime.Now.GetType().ToString(), OrentationType.In));
+            ParamIn.Add(new ParametersProcedure(nameof(VALUE.IMEI), VALUE.IMEI, ("").GetType().ToString(), OrentationType.In));
+            ParamIn.Add(new ParametersProcedure(nameof(VALUE.marca), VALUE.marca, "".GetType().ToString(), OrentationType.In));
 			ParamIn.Add(new ParametersProcedure(nameof(VALUE.modelo), VALUE.modelo, "".GetType().ToString(), OrentationType.In));
 			ParamIn.Add(new ParametersProcedure(nameof(VALUE.problemasugerido), VALUE.problemasugerido, "".GetType().ToString(), OrentationType.In));
 
@@ -64,6 +66,8 @@ namespace MVC.Controlador
                                       uidcliente = x.Field<string>("uidcliente"),
                                       uidempleado = x.Field<string>("uidempleado"),
                                       fechaingreso = x.Field<DateTime?>("fechaingreso"),
+                                      fechasalida = x.Field<DateTime?>("fechasalida"),
+                                      IMEI = x.Field<string>("IMEI"),
                                       marca = x.Field<string>("marca"),
                                       modelo = x.Field<string>("modelo"),
                                       problemasugerido = x.Field<string>("problemasugerido"),
@@ -78,6 +82,8 @@ namespace MVC.Controlador
                     cl.uidcliente = x.uidcliente;
                     cl.uidempleado = x.uidempleado;
                     cl.fechaingreso = x.fechaingreso;
+                    cl.fechasalida = x.fechasalida;
+                    cl.IMEI = x.IMEI;
                     cl.marca = x.marca;
                     cl.modelo = x.modelo;
                     cl.problemasugerido = x.problemasugerido;

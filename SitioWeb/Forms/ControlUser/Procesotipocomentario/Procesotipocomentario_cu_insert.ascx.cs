@@ -38,7 +38,15 @@ namespace SitioWeb.Forms.ControlUser.Procesotipocomentario
         {
             string resultado = "";
             var objeto = GetClass_Control_New();
-            SitioWeb.Controlador.SqlProcesotipocomentario.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            if (Controlador.SqlProcesotipocomentario.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlProcesotipocomentario.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+
             lblMensajeError_Insert.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))

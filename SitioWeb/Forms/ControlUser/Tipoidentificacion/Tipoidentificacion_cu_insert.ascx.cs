@@ -37,7 +37,15 @@ namespace SitioWeb.Forms.ControlUser.Tipoidentificacion
         {
             string resultado = "";
             var objeto = GetClass_Control_New();
-            SitioWeb.Controlador.SqlTipoidentificacion.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            if (Controlador.SqlTipoidentificacion.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlTipoidentificacion.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+
             lblMensajeError_Insert.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))

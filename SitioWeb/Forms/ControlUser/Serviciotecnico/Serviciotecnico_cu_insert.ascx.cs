@@ -31,7 +31,9 @@ namespace SitioWeb.Forms.ControlUser.Serviciotecnico
 			cb_uidcliente_insert.SelectedIndex =-1;
 			cb_uidempleado_insert.SelectedIndex =-1;
 			txt_fechaingreso_insert.Text = "";
-			txt_marca_insert.Text = "";
+            txt_fechasalida_insert.Text = "";
+            txt_IMEI_insert.Text = "0";
+            txt_marca_insert.Text = "";
 			txt_modelo_insert.Text = "";
 			txt_problemasugerido_insert.Text = "";
           
@@ -43,7 +45,15 @@ namespace SitioWeb.Forms.ControlUser.Serviciotecnico
         {
             string resultado = "";
             var objeto = GetClass_Control_New();
-            SitioWeb.Controlador.SqlServiciotecnico.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            if (Controlador.SqlServiciotecnico.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlServiciotecnico.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+
             lblMensajeError_Insert.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))
@@ -68,7 +78,9 @@ namespace SitioWeb.Forms.ControlUser.Serviciotecnico
 				 c.uidcliente =ClasesUtiles.Util.ConvertStringToStringNull(cb_uidcliente_insert.SelectedValue as string);
 				 c.uidempleado =ClasesUtiles.Util.ConvertStringToStringNull(cb_uidempleado_insert.SelectedValue as string);
 				 c.fechaingreso =ClasesUtiles.Util.GetDateOfString(txt_fechaingreso_insert.Text);
-				 c.marca =ClasesUtiles.Util.ConvertStringToStringNull(txt_marca_insert.Text);
+            c.fechasalida = ClasesUtiles.Util.GetDateOfString(txt_fechasalida_insert.Text);
+            c.IMEI = ClasesUtiles.Util.ConvertStringToStringNull(txt_IMEI_insert.Text);
+            c.marca =ClasesUtiles.Util.ConvertStringToStringNull(txt_marca_insert.Text);
 				 c.modelo =ClasesUtiles.Util.ConvertStringToStringNull(txt_modelo_insert.Text);
 				 c.problemasugerido =ClasesUtiles.Util.ConvertStringToStringNull(txt_problemasugerido_insert.Text);
             return c;

@@ -31,7 +31,7 @@
    <asp:Label ID="lbl_uidserviciotecnico_update" AssociatedControlID="txt_uidserviciotecnico_update" runat="server" Text="uidserviciotecnico <b style='color:red;'> *</b>"></asp:Label>
 			  <asp:TextBox  Enabled="true"  ID = "txt_uidserviciotecnico_update" runat = "server" CssClass="form-control"  MaxLength="36"   Width="100 %"></asp:TextBox> 
 </div>
-			  <div class="col-xs-3 ">
+			  <div class="col-xs-3 oculto">
    <asp:Label ID="lbl_codservicio_update" AssociatedControlID="txt_codservicio_update" runat="server" Text="Cod. Servicio <b style='color:red;'> *</b>"></asp:Label>
 			  <asp:TextBox  Enabled="true"  ID = "txt_codservicio_update" runat = "server" CssClass="form-control" TextMode="Number" step="1"  min="0" max="9999999999"   Width="100 %"></asp:TextBox> 
 </div>
@@ -45,8 +45,17 @@
  </div>
 			  <div class="col-xs-3 ">
    <asp:Label ID="lbl_fechaingreso_update" AssociatedControlID="txt_fechaingreso_update" runat="server" Text="Fecha Ingreso <b style='color:red;'> *</b>"></asp:Label>
-			  <asp:TextBox  Enabled="true"  ID = "txt_fechaingreso_update" runat = "server" CssClass="form-control" TextMode="Date"  max="2100-01-01" min="2000-01-01"    Width="100 %"></asp:TextBox> 
+			  <asp:TextBox  Enabled="true"  ID = "txt_fechaingreso_update" runat = "server" CssClass="form-control" TextMode="Date"  max="2100-01-01" min="2000-01-01"    Width="100%"></asp:TextBox> 
 </div>
+                    	  <div class="col-xs-3 ">
+   <asp:Label ID="Label1" AssociatedControlID="txt_fechasalida_update" runat="server" Text="Fecha Salida"></asp:Label>
+			  <asp:TextBox  Enabled="true"  ID = "txt_fechasalida_update" runat = "server" CssClass="form-control" TextMode="Date"  max="2100-01-01" min="2000-01-01"    Width="100%"></asp:TextBox> 
+</div>
+                    	  <div class="col-xs-3 ">
+   <asp:Label ID="Label2" AssociatedControlID="txt_IMEI_update" runat="server" Text="IMEI <b style='color:red;'> *</b>"></asp:Label>
+			  <asp:TextBox  Enabled="true"  ID = "txt_IMEI_update" runat = "server" CssClass="form-control" TextMode="Number" max="999999999999999" min="0" step="1"  Width="100%"></asp:TextBox> 
+</div>
+
 			  <div class="col-xs-3 ">
    <asp:Label ID="lbl_marca_update" AssociatedControlID="txt_marca_update" runat="server" Text="Marca <b style='color:red;'> *</b>"></asp:Label>
 			  <asp:TextBox  Enabled="true"  ID = "txt_marca_update" runat = "server" CssClass="form-control"  MaxLength="100"   Width="100 %"></asp:TextBox> 

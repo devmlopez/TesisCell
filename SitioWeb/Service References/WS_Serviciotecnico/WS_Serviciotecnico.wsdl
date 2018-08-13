@@ -18,6 +18,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="uidcliente" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="uidempleado" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="fechaingreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechasalida" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMEI" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="marca" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="modelo" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="problemasugerido" type="s:string" />

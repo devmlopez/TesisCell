@@ -29,8 +29,15 @@ namespace SitioWeb.Forms.ControlUser.Tipoiconoimg
         {
             string resultado = "";
             var objeto = GetClass_Control_Edit();
-            SitioWeb.Controlador.SqlTipoiconoimg.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
-            lblMensajeError_update.Text = resultado;
+            if (Controlador.SqlTipoiconoimg.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlTipoiconoimg.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+             lblMensajeError_update.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))
             {

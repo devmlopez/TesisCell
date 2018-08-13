@@ -1,10 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Media_CU_Insert.ascx.cs" Inherits="SitioWeb.Forms.ControlUser.Media.Media_CU_Insert" %>
 <%@ Register Src="~/Forms/ControlUser/MsgControl.ascx" TagPrefix="uc1" TagName="MsgControl" %>
         
-		
-		<a href="#" class="btn btn-default btn-xs btn-flat" data-toggle="modal" data-target="#Inser-modal-default">
+	     <%  bool? PuedeAgregar =SitioWeb.ClasesUtiles.SessionClass.GetLoginUser(Page).ClassRol.perisocrear.Value;
+                if (PuedeAgregar == true)
+                {  %>    
+          <a href="#" class="btn btn-default btn-xs btn-flat" data-toggle="modal" data-target="#Inser-modal-default">
             <i class="fa fa-file-o"></i>Agregar
         </a>
+                  <% }%>
 		<!-- Modal Insert -->
         <div class="modal fade" id="Inser-modal-default">
             <div class="modal-dialog modal-lg">

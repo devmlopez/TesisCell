@@ -40,15 +40,6 @@ namespace SitioWeb {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Control btnSignOut.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnSignOut;
-        
-        /// <summary>
         /// Control UC_Menu.
         /// </summary>
         /// <remarks>

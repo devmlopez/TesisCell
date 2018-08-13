@@ -21,9 +21,12 @@ namespace SitioWeb
           return  ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser;
         }
 
-        protected void btnSignOut_Click(object sender, EventArgs e)
-        {
-            ClasesUtiles.SessionClass.SetLoginUser(Page,null);
-        }
+        //protected void btnSignOut_Click(object sender, EventArgs e)
+        //{
+        //    ClasesUtiles.SessionClass.SetLoginUser(Page,null);
+        //}
     }
 }
+
+
+

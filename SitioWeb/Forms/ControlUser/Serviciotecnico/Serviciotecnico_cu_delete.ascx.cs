@@ -77,8 +77,10 @@ namespace SitioWeb.Forms.ControlUser.Serviciotecnico
 			txt_codservicio_delete.Text = "";
 			cb_uidcliente_delete.SelectedIndex =-1;
 			cb_uidempleado_delete.SelectedIndex =-1;
-			txt_fechaingreso_delete.Text = "";
-			txt_marca_delete.Text = "";
+            txt_fechaingreso_delete.Text = "";
+            txt_fechasalida_delete.Text = "";
+            txt_IMEI_delete.Text = "";
+            txt_marca_delete.Text = "";
 			txt_modelo_delete.Text = "";
 			txt_problemasugerido_delete.Text = "";
             lblMensajeError_delete.Text = "";
@@ -90,8 +92,10 @@ namespace SitioWeb.Forms.ControlUser.Serviciotecnico
 			txt_codservicio_delete.Text= ClasesUtiles.Util.ConvertIntToString(c.codservicio);
 			cb_uidcliente_delete.SelectedIndex = cb_uidcliente_delete.Items.IndexOf(cb_uidcliente_delete.Items.FindByValue(c.uidcliente));
 			cb_uidempleado_delete.SelectedIndex = cb_uidempleado_delete.Items.IndexOf(cb_uidempleado_delete.Items.FindByValue(c.uidempleado));
-			txt_fechaingreso_delete.Text= ClasesUtiles.Util.GetDateOfString(c.fechaingreso);
-			txt_marca_delete.Text= c.marca;
+            txt_fechaingreso_delete.Text = ClasesUtiles.Util.GetDateOfString(c.fechaingreso);
+            txt_fechasalida_delete.Text = ClasesUtiles.Util.GetDateOfString(c.fechasalida);
+            txt_IMEI_delete.Text = ClasesUtiles.Util.ConvertStringToStringNull(c.IMEI);            
+            txt_marca_delete.Text= c.marca;
 			txt_modelo_delete.Text= c.modelo;
 			txt_problemasugerido_delete.Text= c.problemasugerido;
     }

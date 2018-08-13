@@ -30,7 +30,7 @@ namespace SitioWeb.ClasesUtiles
    
     public static class Util
     {
-        
+
         public static string GetMenuPorUsuario(string UidUserLogin)
         {
             string ret = "";

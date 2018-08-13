@@ -3,13 +3,16 @@
 <%@ Register Src="~/Forms/ControlUser/Cliente/Cliente_cu_select.ascx" TagPrefix="uc1" TagName="Cliente_cu_select" %>
 
 
+
+
+
 <a href="#" class="btn btn-link" data-toggle="modal" data-target="#Search-modal-default"><i class="fa fa-search"></i>Buscar</a>
 
 <!-- Modal Search -->
-<div class="modal fade" id="Search-modal-default">
-    <div class="modal-dialog modal-lg">
+<div class="modal fade" id="Search-modal-default">         
+    <div class="modal-dialog modal-lg">   
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header"> 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Buscar Registro</h4>

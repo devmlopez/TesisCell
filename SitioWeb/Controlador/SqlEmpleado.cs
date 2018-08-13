@@ -76,8 +76,6 @@ namespace SitioWeb.Controlador
             }
             return ret;
         }
-
-
         public static void InsertInto(string UidUserLogin,ClassEmpleado VALUE, out string resultado)
         {
             resultado = "";
@@ -103,7 +101,6 @@ namespace SitioWeb.Controlador
             }
 
         }
-
         public static ClassEmpleado Set_ClassWS_To_ClassSite(SitioWeb.WS_Empleado.ClassEmpleado value)
         {
             ClassEmpleado ret = new ClassEmpleado();
@@ -168,6 +165,30 @@ namespace SitioWeb.Controlador
 			           
            
             return ret;
+        }
+
+
+        /// <summary>
+        /// Validar campos que deben ser obligados y retorna el nombre de los campos que no soportan nulo
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static List<string> ValidarCamposNulos(ClassEmpleado value)
+        {
+            List<string> retornoCamposError = new List<string>();
+            if (value.uidempleado == null) { retornoCamposError.Add(nameof(value.uidempleado)); }
+             if (value.cedula == null) { retornoCamposError.Add(nameof(value.cedula)); }
+            if (value.nombres == null) { retornoCamposError.Add(nameof(value.nombres)); }
+            if (value.apellidos == null) { retornoCamposError.Add(nameof(value.apellidos)); }
+            if (value.uidestadocivil == null) { retornoCamposError.Add(nameof(value.uidestadocivil)); }
+            if (value.uidsexo == null) { retornoCamposError.Add(nameof(value.uidsexo)); }
+            if (value.num_hijos == null) { retornoCamposError.Add(nameof(value.num_hijos)); }
+            if (value.uidnivelestudio == null) { retornoCamposError.Add(nameof(value.uidnivelestudio)); }
+            if (value.email_trabajo == null) { retornoCamposError.Add(nameof(value.email_trabajo)); }
+            if (value.email == null) { retornoCamposError.Add(nameof(value.email)); }
+            if (value.fecha_ingreso == null) { retornoCamposError.Add(nameof(value.fecha_ingreso)); }
+
+            return retornoCamposError;
         }
 
     }

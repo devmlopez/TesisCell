@@ -136,6 +136,19 @@ namespace SitioWeb.Controlador
            
             return ret;
         }
+        /// <summary>
+        /// Validar campos que deben ser obligados y retorna el nombre de los campos que no soportan nulo
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static List<string> ValidarCamposNulos(ClassPaginagrupo value)
+        {
+            List<string> retornoCamposError = new List<string>();
+            if (value.uidpaginagrupo == null) { retornoCamposError.Add(nameof(value.uidpaginagrupo)); }
+            if (value.uidpagina == null) { retornoCamposError.Add(nameof(value.uidpagina)); }
+            if (value.uidgrupo == null) { retornoCamposError.Add(nameof(value.uidgrupo)); }
+            return retornoCamposError;
+        }
 
     }
 }

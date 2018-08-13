@@ -26,6 +26,8 @@ namespace SitioWeb.Forms.ControlUser.Serviciotecnico
 			cb_uidcliente_update.SelectedIndex =-1;
 			cb_uidempleado_update.SelectedIndex =-1;
 			txt_fechaingreso_update.Text = "";
+            txt_fechasalida_update.Text = "";
+            txt_IMEI_update.Text = "0";
 			txt_marca_update.Text = "";
 			txt_modelo_update.Text = "";
 			txt_problemasugerido_update.Text = "";
@@ -35,7 +37,15 @@ namespace SitioWeb.Forms.ControlUser.Serviciotecnico
         {
             string resultado = "";
             var objeto = GetClass_Control_Edit();
-            SitioWeb.Controlador.SqlServiciotecnico.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            if (Controlador.SqlServiciotecnico.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlServiciotecnico.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+
             lblMensajeError_update.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))
@@ -69,8 +79,10 @@ namespace SitioWeb.Forms.ControlUser.Serviciotecnico
 				 c.codservicio= ClasesUtiles.Util.ConvertStringToInt(txt_codservicio_update.Text);
 				 c.uidcliente= ClasesUtiles.Util.ConvertStringToStringNull(cb_uidcliente_update.SelectedValue as string);
 				 c.uidempleado= ClasesUtiles.Util.ConvertStringToStringNull(cb_uidempleado_update.SelectedValue as string);
-				 c.fechaingreso= ClasesUtiles.Util.GetDateOfString(txt_fechaingreso_update.Text);
-				 c.marca= ClasesUtiles.Util.ConvertStringToStringNull(txt_marca_update.Text);
+            c.fechaingreso = ClasesUtiles.Util.GetDateOfString(txt_fechaingreso_update.Text);
+            c.fechasalida = ClasesUtiles.Util.GetDateOfString(txt_fechasalida_update.Text);
+            c.IMEI = ClasesUtiles.Util.ConvertStringToStringNull(txt_IMEI_update.Text);
+            c.marca= ClasesUtiles.Util.ConvertStringToStringNull(txt_marca_update.Text);
 				 c.modelo= ClasesUtiles.Util.ConvertStringToStringNull(txt_modelo_update.Text);
 				 c.problemasugerido= ClasesUtiles.Util.ConvertStringToStringNull(txt_problemasugerido_update.Text);
             return c;
@@ -83,8 +95,10 @@ namespace SitioWeb.Forms.ControlUser.Serviciotecnico
 			txt_codservicio_update.Text= ClasesUtiles.Util.ConvertIntToString(c.codservicio);
 			cb_uidcliente_update.SelectedIndex = cb_uidcliente_update.Items.IndexOf(cb_uidcliente_update.Items.FindByValue(c.uidcliente));
 			cb_uidempleado_update.SelectedIndex = cb_uidempleado_update.Items.IndexOf(cb_uidempleado_update.Items.FindByValue(c.uidempleado));
-			txt_fechaingreso_update.Text= ClasesUtiles.Util.GetDateOfString(c.fechaingreso);
-			txt_marca_update.Text= c.marca;
+            txt_fechaingreso_update.Text = ClasesUtiles.Util.GetDateOfString(c.fechaingreso);
+            txt_fechasalida_update.Text = ClasesUtiles.Util.GetDateOfString(c.fechasalida);
+            txt_IMEI_update.Text = ClasesUtiles.Util.ConvertStringToStringNull(c.IMEI);
+            txt_marca_update.Text= c.marca;
 			txt_modelo_update.Text= c.modelo;
 			txt_problemasugerido_update.Text= c.problemasugerido;
 

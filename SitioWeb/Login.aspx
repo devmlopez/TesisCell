@@ -32,25 +32,25 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
 </head>
-<body class="hold-transition login-page" style="background-color:white!important;">
-<div class="login-box">
+<body class="hold-transition login-page" style="background-color:white!important;  background-image:url('img/fondologin.jpg'); background-position:center; background-repeat:no-repeat;">
+<div class="login-box" style="background-color:white; opacity:0.9;">
   <div class="login-logo">
   <img src="img/logo.jpg" width="300px" height="200px"/>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg"></p>
 
 
     <form id="form1" runat="server">
  <div class="form-group has-feedback">
-      <asp:TextBox runat="server" ID="txtUsuario" CssClass="form-control"  placeholder="user">
+      <asp:TextBox runat="server" ID="txtUsuario" CssClass="form-control"  placeholder="usuario">
       </asp:TextBox>
        <%-- <input type="email" class="form-control" placeholder="Email">--%>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-      <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control" TextMode="Password" placeholder="Password">
+      <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control" TextMode="Password" placeholder="contraseña">
       </asp:TextBox>
 
        <%-- <input type="password" class="form-control" placeholder="Password">--%>
@@ -60,13 +60,13 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Remember Me
+              <input type="checkbox"> Recordar
             </label>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-             <asp:Button  runat="server" ID="btnLogin" CssClass="btn btn-primary btn-block btn-flat" Text="Sign In"  OnClick="btnLogin_Click"/>
+             <asp:Button  runat="server" ID="btnLogin" CssClass="btn btn-primary btn-block btn-flat" Text="Entrar"  OnClick="btnLogin_Click"/>
         <%--  <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>--%>
         </div>
         <!-- /.col -->

@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MsgControl.ascx.cs" Inherits="SitioWeb.Forms.ControlUser.MsgControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MsgControl.ascx.cs" Inherits="SitioWeb.Forms.ControlUser.MsgControl"  %>
+
 
 <!-- MODAL MESSAGE-->
 <script>

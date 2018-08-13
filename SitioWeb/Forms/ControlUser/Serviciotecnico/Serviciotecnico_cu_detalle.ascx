@@ -43,12 +43,14 @@
 					 <asp:BoundField  ReadOnly="True" HeaderText="Cod. Servicio" DataField="codservicio" SortExpression="codservicio" Visible="false"></asp:BoundField>
 					  <asp:TemplateField ItemStyle-Width="240px" HeaderText="Cod. Servicio">                                
                                 <ItemTemplate>                                 
-                                  <a runat="server" class="btn  btn-link btn-xs btn-flat" href='<%#Eval("aux3")%>' ><%#Eval("codservicio")%> </a>                                                                      
+                                  <a runat="server" class="btn  btn-link btn-xs btn-flat" href='<%#Eval("aux3")%>' ><%#Eval("aux5")%> </a>                                                                      
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField  ReadOnly="True" HeaderText="Cliente" DataField="aux1" SortExpression="aux1" Visible="True"></asp:BoundField>
 					 <asp:BoundField  ReadOnly="True" HeaderText="Empleado" DataField="aux2" SortExpression="aux2" Visible="True"></asp:BoundField>
 					 <asp:BoundField  ReadOnly="True" HeaderText="Fecha Ingreso" DataField="fechaingreso" SortExpression="fechaingreso" Visible="True"></asp:BoundField>
+					 <asp:BoundField  ReadOnly="True" HeaderText="Fecha Salida" DataField="fechasalida" SortExpression="fechasalida" Visible="True"></asp:BoundField>
+					 <asp:BoundField  ReadOnly="True" HeaderText="IMEI" DataField="IMEI" SortExpression="IMEI" Visible="True"></asp:BoundField>
 					 <asp:BoundField  ReadOnly="True" HeaderText="Marca" DataField="marca" SortExpression="marca" Visible="True"></asp:BoundField>
 					 <asp:BoundField  ReadOnly="True" HeaderText="Modelo" DataField="modelo" SortExpression="modelo" Visible="True"></asp:BoundField>
 					 <asp:BoundField  ReadOnly="True" HeaderText="Problema Sugerido" DataField="problemasugerido" SortExpression="problemasugerido" Visible="True"></asp:BoundField>

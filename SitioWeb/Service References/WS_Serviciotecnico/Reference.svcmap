@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="50c1df6b-eb18-44b9-a19d-457c98c75176" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="883e5a40-6032-4d65-8801-a8e8e56cbd35" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://localhost:51121/MVC/Vista/WS_Serviciotecnico.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WS_Serviciotecnico.disco" MetadataType="Disco" ID="27aaf68d-cacd-419d-bd07-a66c47853274" SourceId="1" SourceUrl="http://localhost:51121/MVC/Vista/WS_Serviciotecnico.asmx?disco" />
-    <MetadataFile FileName="WS_Serviciotecnico.wsdl" MetadataType="Wsdl" ID="af7cbb39-2491-4041-91f4-ada26416a602" SourceId="1" SourceUrl="http://localhost:51121/MVC/Vista/WS_Serviciotecnico.asmx?wsdl" />
+    <MetadataFile FileName="WS_Serviciotecnico.disco" MetadataType="Disco" ID="20819d28-d857-46b2-9752-76289529db39" SourceId="1" SourceUrl="http://localhost:51121/MVC/Vista/WS_Serviciotecnico.asmx?disco" />
+    <MetadataFile FileName="WS_Serviciotecnico.wsdl" MetadataType="Wsdl" ID="73b1f78b-42b5-49b9-bb0d-d9eb7599ec50" SourceId="1" SourceUrl="http://localhost:51121/MVC/Vista/WS_Serviciotecnico.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

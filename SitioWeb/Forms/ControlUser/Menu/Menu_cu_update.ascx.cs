@@ -32,7 +32,15 @@ namespace SitioWeb.Forms.ControlUser.Menu
         {
             string resultado = "";
             var objeto = GetClass_Control_Edit();
-            SitioWeb.Controlador.SqlMenu.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            if (Controlador.SqlMenu.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlMenu.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }
+            else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+
             lblMensajeError_update.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))

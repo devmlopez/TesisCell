@@ -52,9 +52,17 @@ namespace SitioWeb.Forms.ControlUser.Cliente
         {
             string resultado = "";
             var objeto = GetClass_Control_New();
-            SitioWeb.Controlador.SqlCliente.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
-            lblMensajeError_Insert.Text = resultado;
-            resultado = resultado.Replace("ERROR|", "OK|");
+
+            if (Controlador.SqlCliente.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlCliente.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+            }else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+                lblMensajeError_Insert.Text = resultado;
+              //  resultado = resultado.Replace("ERROR|", "OK|");
+          
             if ((resultado + "|").Split('|')[0].Equals("OK"))
             {
                 ExecScriptModalInsert(false, resultado);
@@ -65,7 +73,7 @@ namespace SitioWeb.Forms.ControlUser.Cliente
                 ExecScriptModalInsert(true, resultado);
             }
         }
-
+        
 
 		  private SitioWeb.Controlador.ClassCliente GetClass_Control_New()
         {

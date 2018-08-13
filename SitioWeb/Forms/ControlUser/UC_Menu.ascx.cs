@@ -29,6 +29,8 @@ namespace SitioWeb.Forms.ControlUser
 
                 MenusPorRol = MenusPorRol.Where(x => x.esvisible == true).ToList();
                 Session["MenusPorRol"] = MenusPorRol;
+               
+
             }
             GenerarMenu();
         }

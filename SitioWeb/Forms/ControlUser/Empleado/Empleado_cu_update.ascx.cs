@@ -46,8 +46,14 @@ namespace SitioWeb.Forms.ControlUser.Empleado
         {
             string resultado = "";
             var objeto = GetClass_Control_Edit();
-            SitioWeb.Controlador.SqlEmpleado.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
-            lblMensajeError_update.Text = resultado;
+            if (Controlador.SqlEmpleado.ValidarCamposNulos(objeto).Count() == 0)
+            {
+                SitioWeb.Controlador.SqlEmpleado.Update(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario, objeto, out resultado);
+         }else
+            {
+                resultado = "ERROR||Existen campos obligatorios que llenar";
+            }
+    lblMensajeError_update.Text = resultado;
 
             if ((resultado + "|").Split('|')[0].Equals("OK"))
             {

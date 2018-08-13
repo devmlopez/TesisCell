@@ -94,6 +94,10 @@ namespace SitioWeb.WS_Serviciotecnico {
         
         private System.Nullable<System.DateTime> fechaingresoField;
         
+        private System.Nullable<System.DateTime> fechasalidaField;
+        
+        private string iMEIField;
+        
         private string marcaField;
         
         private string modeloField;
@@ -161,7 +165,31 @@ namespace SitioWeb.WS_Serviciotecnico {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<System.DateTime> fechasalida {
+            get {
+                return this.fechasalidaField;
+            }
+            set {
+                this.fechasalidaField = value;
+                this.RaisePropertyChanged("fechasalida");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string IMEI {
+            get {
+                return this.iMEIField;
+            }
+            set {
+                this.iMEIField = value;
+                this.RaisePropertyChanged("IMEI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string marca {
             get {
                 return this.marcaField;
@@ -173,7 +201,7 @@ namespace SitioWeb.WS_Serviciotecnico {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string modelo {
             get {
                 return this.modeloField;
@@ -185,7 +213,7 @@ namespace SitioWeb.WS_Serviciotecnico {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string problemasugerido {
             get {
                 return this.problemasugeridoField;

@@ -13,7 +13,9 @@ namespace SitioWeb.Controlador
 			public string uidcliente {get;set;}
 			public string uidempleado {get;set;}
 			public DateTime? fechaingreso {get;set;}
-			public string marca {get;set;}
+        public DateTime? fechasalida { get; set; }
+        public string IMEI { get; set; }
+        public string marca {get;set;}
 			public string modelo {get;set;}
 			public string problemasugerido {get;set;}       
 		public string aux1 { get; set; }

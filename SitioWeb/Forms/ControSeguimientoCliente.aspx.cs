@@ -57,8 +57,10 @@ namespace SitioWeb.Forms
                                             problemasugerido = row.Field<string>("problemasugerido"),
                                             modelo = row.Field<string>("modelo"),
                                             marca = row.Field<string>("marca"),
-                                             fechaingreso = row.Field<DateTime?>("fechaingreso"),
-                                             codservicio = row.Field<int>("codservicio"),
+                                           fechaingreso = row.Field<DateTime?>("fechaingreso"),
+                                           fechasalida = row.Field<DateTime?>("fechasalida"),
+                                           IMEI = row.Field<string>("IMEI"),
+                                           codservicio = row.Field<int>("codservicio"),
                                            aux1 = row.Field<string>("aux1"),
                                            aux2 = row.Field<string>("aux2"),
                                            aux3 = row.Field<string>("aux3"),
@@ -77,39 +79,44 @@ namespace SitioWeb.Forms
                 txt_modelo_select.Text = ServicioTecnico.modelo;
                 txt_problemasugerido_select.Text = ServicioTecnico.problemasugerido;
                 txt_fechaingreso_select.Text = (ServicioTecnico.fechaingreso==null?"":ServicioTecnico.fechaingreso.Value.ToString("dd/MM/yyyy"));
-
-
+                txt_FechaSalida_select.Text=(ServicioTecnico.fechasalida == null ? "" : ServicioTecnico.fechasalida.Value.ToString("dd/MM/yyyy"));
+                txt_IMEI_select.Text= ServicioTecnico.IMEI;
                 #region Cargamos proceso Actual
 
-                var Proceso = Controlador.SqlProceso.Select(uiduser, new Controlador.ClassProceso(){
-                    uidserviciotecnico = ServicioTecnico.uidserviciotecnico
-                }, out mensajeRet).FirstOrDefault();
+                var Proceso = CrearrocesoSInoExiste(ServicioTecnico.uidserviciotecnico);
+                //    Controlador.SqlProceso.Select(uiduser, new Controlador.ClassProceso(){
+                //    uidserviciotecnico = ServicioTecnico.uidserviciotecnico
+                //}, out mensajeRet).FirstOrDefault();
 
-
-                var ProcesoTipoCOmentarioTable = Controlador.SqlProcesotipocomentario.SelectDataTable(uiduser,
-                    new Controlador.ClassProcesotipocomentario()
-                    {             uidproceso= Proceso.uidproceso
-                    }, out mensajeRet);
-
-                var ProcesoTipoCOmentario = (from row in ProcesoTipoCOmentarioTable.AsEnumerable()
-                                             select new Controlador.ClassProcesotipocomentario
-                                             {
-                                                 uidproceso = row.Field<string>("uidproceso"),
-                                                 uidprocesotipocomentario = row.Field<string>("uidprocesotipocomentario"),
-                                                 uidtipocomentario = row.Field<string>("uidtipocomentario"),
-                                             });
-
-                ProcesoTipoCOmentario = ProcesoTipoCOmentario.Where(x => !string.IsNullOrEmpty(x.uidtipocomentario));
-                txtValorComboProceso.Text = cb_Proceso.SelectedValue as string;
-                if (ProcesoTipoCOmentario.Count() > 0) {
-                    var _proceso = ProcesoTipoCOmentario.FirstOrDefault();
-                    string uidproceso = _proceso.uidtipocomentario;
-                    cb_Proceso.SelectedIndex = cb_Proceso.Items.IndexOf(cb_Proceso.Items.FindByValue(uidproceso));
-                }else
+                if (Proceso != null)
                 {
-                    cb_Proceso.SelectedIndex = -1;
-                }
+                    var ProcesoTipoCOmentarioTable = Controlador.SqlProcesotipocomentario.SelectDataTable(uiduser,
+                        new Controlador.ClassProcesotipocomentario()
+                        {
+                            uidproceso = Proceso.uidproceso
+                        }, out mensajeRet);
 
+                    var ProcesoTipoCOmentario = (from row in ProcesoTipoCOmentarioTable.AsEnumerable()
+                                                 select new Controlador.ClassProcesotipocomentario
+                                                 {
+                                                     uidproceso = row.Field<string>("uidproceso"),
+                                                     uidprocesotipocomentario = row.Field<string>("uidprocesotipocomentario"),
+                                                     uidtipocomentario = row.Field<string>("uidtipocomentario"),
+                                                 });
+
+                    ProcesoTipoCOmentario = ProcesoTipoCOmentario.Where(x => !string.IsNullOrEmpty(x.uidtipocomentario));
+                    txtValorComboProceso.Text = cb_Proceso.SelectedValue as string;
+                    if (ProcesoTipoCOmentario.Count() > 0)
+                    {
+                        var _proceso = ProcesoTipoCOmentario.FirstOrDefault();
+                        string uidproceso = _proceso.uidtipocomentario;
+                        cb_Proceso.SelectedIndex = cb_Proceso.Items.IndexOf(cb_Proceso.Items.FindByValue(uidproceso));
+                    }
+                    else
+                    {
+                        cb_Proceso.SelectedIndex = -1;
+                    }
+                }
                 txtComentario.Visible = true;
                 btnEnviar.Visible = true;
                 if ((cb_Proceso.SelectedValue as string) != "03bee36a-fef1-4c54-a066-632a23b7b5da" &&
@@ -139,43 +146,62 @@ namespace SitioWeb.Forms
 
         }
 
+        private Controlador.ClassProceso CrearrocesoSInoExiste(string uidserviciotecnico)
+        {
+            Controlador.ClassProceso classroceso = null;
+            string MensajeResultado = "";
+            var BuscarProceso = Controlador.SqlProceso.Select(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario,
+                    new Controlador.ClassProceso()
+                    {
+                        uidserviciotecnico = uidserviciotecnico
+                    }, out MensajeResultado);
+            if (BuscarProceso.Count() == 0)
+            {
+                #region insertar proceso
+                Controlador.SqlProceso.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario,
+                 new Controlador.ClassProceso()
+                 {
+                     uidproceso = Guid.NewGuid().ToString(),
+                     uidserviciotecnico = uidserviciotecnico,
+
+                 }, out MensajeResultado);
+
+                if (MensajeResultado.Contains("OK"))
+                {
+                    BuscarProceso = Controlador.SqlProceso.Select(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario,
+               new Controlador.ClassProceso()
+               {
+                   uidserviciotecnico = uidserviciotecnico
+               }, out MensajeResultado);
+
+                    classroceso = BuscarProceso.FirstOrDefault();
+                }
+                #endregion
+
+            }else
+            {
+                classroceso = BuscarProceso.FirstOrDefault();
+            }
+            return classroceso;
+        }
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             string MensajeResultado = "";
             string uidserviciotecnico = Request.QueryString["st"];
             if (!string.IsNullOrEmpty(uidserviciotecnico))
             {
+                CrearrocesoSInoExiste(uidserviciotecnico);
+
                 var BuscarProceso = Controlador.SqlProceso.Select(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario,
                     new Controlador.ClassProceso()
                     {
                         uidserviciotecnico = uidserviciotecnico
-                    }, out MensajeResultado);
-                if (BuscarProceso.Count() == 0)
-                {
-                    #region insertar proceso
-                    Controlador.SqlProceso.InsertInto(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario,
-                     new Controlador.ClassProceso()
-                     {
-                          uidproceso= Guid.NewGuid().ToString(),                          
-                         uidserviciotecnico = uidserviciotecnico,
-                          
-                     }, out MensajeResultado);
-
-                    if (MensajeResultado.Contains("OK"))
-                    {
-                        BuscarProceso = Controlador.SqlProceso.Select(ClasesUtiles.SessionClass.GetLoginUser(Page).classLoginUser.uidsuario,
-                   new Controlador.ClassProceso()
-                   {
-                       uidserviciotecnico = uidserviciotecnico
-                   }, out MensajeResultado);
-                    }
-                    #endregion
-                }
-             
-
-
+                    }, out MensajeResultado);             
+                
                     if (BuscarProceso.Count() > 0)
                 {
+                   
+
                     var Proceso = BuscarProceso.FirstOrDefault();
                     string resultArrayImagen = "";
                     if (FileUpload1.HasFile)

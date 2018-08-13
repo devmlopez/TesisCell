@@ -150,6 +150,26 @@ namespace SitioWeb.Controlador
            
             return ret;
         }
+        /// <summary>
+        /// Validar campos que deben ser obligados y retorna el nombre de los campos que no soportan nulo
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static List<string> ValidarCamposNulos(ClassRol value)
+        {
+            List<string> retornoCamposError = new List<string>();
+            if (value.uidrol == null) { retornoCamposError.Add(nameof(value.uidrol)); }
+            if (value.rol == null) { retornoCamposError.Add(nameof(value.rol)); }
+            if (value.permisolectura == null) { retornoCamposError.Add(nameof(value.permisolectura)); }
+            if (value.permisoescritura == null) { retornoCamposError.Add(nameof(value.permisoescritura)); }
+            if (value.permisoconsultar == null) { retornoCamposError.Add(nameof(value.permisoconsultar)); }
+            if (value.perisocrear == null) { retornoCamposError.Add(nameof(value.perisocrear)); }
+            if (value.permisoeditar == null) { retornoCamposError.Add(nameof(value.permisoeditar)); }
+            if (value.permisoeliminar == null) { retornoCamposError.Add(nameof(value.permisoeliminar)); }
+            if (value.permisototal == null) { retornoCamposError.Add(nameof(value.permisototal)); }
+            if (value.permisonulo == null) { retornoCamposError.Add(nameof(value.permisonulo)); }
+            return retornoCamposError;
+        }
 
     }
 }

@@ -74,6 +74,8 @@ namespace SitioWeb.Controlador
                                          uidcliente = row.Field<string>("uidcliente"),
                                          uidempleado = row.Field<string>("uidempleado"),
                                          fechaingreso = row.Field<DateTime?>("fechaingreso"),
+                                         fechasalida = row.Field<DateTime?>("fechasalida"),
+                                         IMEI = row.Field<string>("IMEI"),
                                          marca = row.Field<string>("marca"),
                                          modelo = row.Field<string>("modelo"),
                                          problemasugerido = row.Field<string>("problemasugerido"),
@@ -160,14 +162,16 @@ namespace SitioWeb.Controlador
             ClassServiciotecnico ret = new ClassServiciotecnico();
 
 			
-			 ret.uidserviciotecnico = value.uidserviciotecnico;
-			 ret.codservicio = value.codservicio;
-			 ret.uidcliente = value.uidcliente;
-			 ret.uidempleado = value.uidempleado;
-			 ret.fechaingreso = value.fechaingreso;
-			 ret.marca = value.marca;
-			 ret.modelo = value.modelo;
-			 ret.problemasugerido = value.problemasugerido;
+			ret.uidserviciotecnico = value.uidserviciotecnico;
+			ret.codservicio = value.codservicio;
+			ret.uidcliente = value.uidcliente;
+			ret.uidempleado = value.uidempleado;
+            ret.fechaingreso = value.fechaingreso;
+            ret.fechasalida = value.fechasalida;
+            ret.IMEI = value.IMEI;
+            ret.marca = value.marca;
+			ret.modelo = value.modelo;
+			ret.problemasugerido = value.problemasugerido;
 			 //ret.aux1 = value.aux1;
     //        ret.aux2= value.aux2;
     //        ret.aux3 = value.aux3;
@@ -190,13 +194,34 @@ namespace SitioWeb.Controlador
 			 ret.codservicio = value.codservicio;
 			 ret.uidcliente = value.uidcliente;
 			 ret.uidempleado = value.uidempleado;
-			 ret.fechaingreso = value.fechaingreso;
-			 ret.marca = value.marca;
-			 ret.modelo = value.modelo;
+            ret.fechaingreso = value.fechaingreso;
+            ret.fechasalida = value.fechasalida;
+            ret.IMEI = value.IMEI;
+            ret.marca = value.marca;
+            ret.modelo = value.modelo;
 			 ret.problemasugerido = value.problemasugerido;
 			           
            
             return ret;
+        }
+        /// <summary>
+        /// Validar campos que deben ser obligados y retorna el nombre de los campos que no soportan nulo
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static List<string> ValidarCamposNulos(ClassServiciotecnico value)
+        {
+            List<string> retornoCamposError = new List<string>();
+            if (value.uidserviciotecnico == null) { retornoCamposError.Add(nameof(value.uidserviciotecnico)); }
+            // if (value.codservicio == null) { retornoCamposError.Add(nameof(value.codservicio)); }
+            if (value.uidcliente == null) { retornoCamposError.Add(nameof(value.uidcliente)); }
+            if (value.uidempleado == null) { retornoCamposError.Add(nameof(value.uidempleado)); }
+            if (value.fechaingreso == null) { retornoCamposError.Add(nameof(value.fechaingreso)); }
+            if (value.marca == null) { retornoCamposError.Add(nameof(value.marca)); }
+            if (value.modelo == null) { retornoCamposError.Add(nameof(value.modelo)); }
+            if (value.IMEI == null) { retornoCamposError.Add(nameof(value.IMEI)); }
+            if (value.problemasugerido == null) { retornoCamposError.Add(nameof(value.problemasugerido)); }
+            return retornoCamposError;
         }
 
     }
